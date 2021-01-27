@@ -1,5 +1,5 @@
 {% extends '_layout.njk' %}
-{% import '_macro/post-collapse.njk' as post_template with context %}
+{% import '_macro/post-collapse-filter.njk' as post_template with context %}
 {% import '_macro/sidebar.njk' as sidebar_template with context %}
 
 {% block title %}{{ __('title.archive') }} | {{ title }}{% endblock %}
@@ -14,10 +14,10 @@
   <div class="post-block">
     <div class="post-content">
       <div class="collection-title">
-        <span class="collection-header">Archives</span>
+        <span class="collection-header">Products</span>
       </div>
 
-      {{ post_template.render(page.posts) }}
+      {{ post_template.render(site.pages) }}
 
     </div>
   </div>

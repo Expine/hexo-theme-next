@@ -5,9 +5,15 @@ title:
   category: カテゴリ
   tag: タグ
   schedule: スケジュール
+  diary: 日誌
+  review: レビュー
+  product: プロダクト
 menu:
   home: ホーム
   archives: アーカイブ
+  diary: 日誌
+  review: レビュー
+  product: プロダクト
   categories: カテゴリ
   tags: タグ
   about: プロフィール

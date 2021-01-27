@@ -43,3 +43,18 @@ for $inject_mixin in hexo-config('injects.mixin')
 // --------------------------------------------------
 for $inject_style in hexo-config('injects.style')
   @import $inject_style;
+
+// Customize
+body {
+  font-feature-settings: "palt" 1;
+}
+.posts-expand .post-meta {
+  color: $grey-dark;
+  font-family: $font-family-posts;
+  font-size: $font-size-smallest;
+  margin: 3px 0 20px 0;
+  text-align: center;
+}
+.posts-expand .post-header {
+  margin-bottom: 10px;
+}

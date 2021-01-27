@@ -25,7 +25,7 @@ NexT.boot.registerEvents = function() {
     };
     window.anime(Object.assign({
       targets : siteNav,
-      duration: 200,
+      duration: 20,
       height  : animateAction ? [height, 0] : [0, height],
       easing  : 'linear'
     }, animateAction ? {
@@ -43,7 +43,7 @@ NexT.boot.registerEvents = function() {
     }));
   });
 
-  const duration = 200;
+  const duration = 20;
   document.querySelectorAll('.sidebar-nav li').forEach((element, index) => {
     element.addEventListener('click', () => {
       if (element.matches('.sidebar-toc-active .sidebar-nav-toc, .sidebar-overview-active .sidebar-nav-overview')) return;

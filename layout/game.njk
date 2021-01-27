@@ -1,0 +1,42 @@
+{% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
+
+{% block title %}
+  {%- set page_title_suffix = ' | ' + title %}
+  {{- page.title + page_title_suffix }}
+{% endblock %}
+
+{% block class %}page posts-expand{% endblock %}
+
+{% block content %}
+
+    {##################}
+    {### PAGE BLOCK ###}
+    {##################}
+    <div class="post-block" lang="{{ page.lang }}">
+      {%- include '_partials/page/page-header.njk' -%}
+      {#################}
+      {### PAGE BODY ###}
+      {#################}
+      <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
+        <iframe id="inlineFrameExample"
+          title={{ page.title }}
+          width={{ page.width }}
+          height={{ page.height }}
+          src={{ page.url }}>
+        </iframe>
+      </div>
+      {#####################}
+      {### END PAGE BODY ###}
+      {#####################}
+    </div>
+    {%- include '_partials/page/breadcrumb.njk' -%}
+    {######################}
+    {### END PAGE BLOCK ###}
+    {######################}
+
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}
