@@ -1,7 +1,7 @@
-{% macro render(posts) %}
+{% macro render(posts, dir) %}
 {%- set current_year = '1970' %}
 {%- for post in posts.toArray() | sort(true, true, 'date') %}
-  {%- if post.source.startsWith("product") and (post.source != "product/index.md") %}
+  {%- if post.source.startsWith(dir) and (post.source != dir + "/index.md") %}
     {%- set year = date(post.date, 'YYYY') %}
 
     {%- if year !== current_year %}

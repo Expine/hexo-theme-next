@@ -26,6 +26,15 @@
           src={{ page.url }}>
         </iframe>
       </div>
+      <div class="post-meta-container" style="text-align: center">
+        {%- if page.desc %}
+          <div class="post-description">{{ page.desc }}</div>
+        {%- endif %}
+        {%- if page.github %}
+          <a class="post-title-link" href={{ page.github }} itemprop="url"><span itemprop="name">GitHub</span></a>
+        {%- endif %}
+      </div>
+      
       {#####################}
       {### END PAGE BODY ###}
       {#####################}

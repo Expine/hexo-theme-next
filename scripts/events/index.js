@@ -30,7 +30,7 @@ Documentation: https://theme-next.js.org
 
 // ページを作る
 var pagination = require('./lib/pagination');
-hexo.extend.generator.register('home', function(locals){
+hexo.extend.generator.register('home', function(locals) {
   // hexo-pagination makes an index.html for the /archives route
   return pagination('home', locals.posts, {
     perPage: 10,
@@ -38,7 +38,7 @@ hexo.extend.generator.register('home', function(locals){
     excludeTag: 'Diary'
   });
 });
-hexo.extend.generator.register('diary', function(locals){
+hexo.extend.generator.register('diary', function(locals) {
   // hexo-pagination makes an index.html for the /archives route
   return pagination('diary', locals.posts, {
     perPage: 10,
