@@ -1,0 +1,41 @@
+{% extends '_layout.njk' %}
+{% import '_macro/sidebar.njk' as sidebar_template with context %}
+
+{% block title %}
+  {%- set page_title_suffix = ' | ' + title %}
+  {{- page.title + page_title_suffix }}
+{% endblock %}
+
+{% block class %}page posts-expand{% endblock %}
+
+{% block content %}
+
+    {##################}
+    {### PAGE BLOCK ###}
+    {##################}
+    <div class="post-block" lang="{{ page.lang }}">
+      {%- include '_partials/page/page-header.njk' -%}
+      {#################}
+      {### PAGE BODY ###}
+      {#################}
+      {{ post_gallery(page.photos) }}
+      <div class="post-meta-container" style="text-align: center">
+        {%- if page.desc %}
+          <div class="post-description">{{ page.desc }}</div>
+        {%- endif %}
+      </div>
+      
+      {#####################}
+      {### END PAGE BODY ###}
+      {#####################}
+    </div>
+    {%- include '_partials/page/breadcrumb.njk' -%}
+    {######################}
+    {### END PAGE BLOCK ###}
+    {######################}
+
+{% endblock %}
+
+{% block sidebar %}
+  {{ sidebar_template.render(true) }}
+{% endblock %}

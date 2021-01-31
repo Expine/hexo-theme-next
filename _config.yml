@@ -14,7 +14,7 @@ cache:
   enable: true
 
 # Remove unnecessary files after hexo generate.
-minify: false
+minify: true
 
 # Define custom file paths.
 # Create your custom files in site directory `source/_data` and uncomment needed files below.
@@ -50,9 +50,9 @@ darkmode: false
 # ---------------------------------------------------------------
 
 favicon:
-  small: /images/favicon-16x16-next.png
-  medium: /images/favicon-32x32-next.png
-  apple_touch_icon: /images/apple-touch-icon-next.png
+  small: /images/favicon.ico
+  medium: /images/favicon.ico
+  apple_touch_icon: /images/favicon.ico
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /manifest.json
 
@@ -87,6 +87,7 @@ menu:
   diary: /diary/ || fa fa-book
   review: /review/ || fa fa-gamepad
   product: /product/ || fa fa-database
+  illust: /illust/ || fa fa-edit
   #categories: /categories/ || fa fa-th
   #schedule: /schedule/ || fa fa-calendar
   #sitemap: /sitemap.xml || fa fa-sitemap
@@ -128,7 +129,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: ./images/avater.png
   # If true, the avatar will be dispalyed in circle.
   rounded: false
   # If true, the avatar will be rotated with the cursor.
@@ -147,6 +148,7 @@ social:
   #Weibo: https://weibo.com/yourname || fab fa-weibo
   #Google: https://plus.google.com/yourname || fab fa-google
   Twitter: https://twitter.com/_narratology || fab fa-twitter
+  Steam: https://steamcommunity.com/profiles/76561198812822026/ || fab fa-steam
   #FB Page: https://www.facebook.com/yourname || fab fa-facebook
   #StackOverflow: https://stackoverflow.com/yourname || fab fa-stack-overflow
   #YouTube: https://youtube.com/yourname || fab fa-youtube
@@ -581,10 +583,10 @@ comments:
 # Disqus
 # For more information: https://disqus.com
 disqus:
-  enable: false
-  shortname:
-  count: true
-
+  enable: true
+  shortname: https-expine-github-io
+  count: false
+  
 # DisqusJS
 # For more information: https://disqusjs.skk.moe
 disqusjs:
@@ -785,7 +787,7 @@ note:
 tabs:
   transition:
     tabs: false
-    labels: true
+    labels: false
 
 # PDF tag
 # NexT will try to load pdf files natively, if failed, pdf.js will be used.
@@ -810,7 +812,7 @@ mermaid:
 # Use Animate.css to animate everything.
 # For more information: https://animate.style
 motion:
-  enable: false
+  enable: true
   async: true
   transition:
     # All available transition variants: https://theme-next.js.org/animate/

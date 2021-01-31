@@ -33,7 +33,11 @@
           {%- endif %}
         </div>
 
-        {{ post_gallery(post.photos) }}
+        {%- if post.link %}{# Link posts #}
+          {{ post_gallery(post.photos, "trim", post.link) }}
+        {% else %}
+          {{ post_gallery(post.photos, "trim", url_for(post.path)) }}
+        {%- endif %}
       </header>
     </article>
   {%- endif %}

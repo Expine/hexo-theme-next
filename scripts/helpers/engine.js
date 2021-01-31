@@ -48,11 +48,13 @@ hexo.extend.helper.register('next_pre', function() {
   return results.join('\n');
 });
 
-hexo.extend.helper.register('post_gallery', function(photos) {
+hexo.extend.helper.register('post_gallery', function(photos, attrClass, link) {
   if (!photos || !photos.length) return '';
   const content = photos.map(photo => `
-    <div class="post-gallery-image">
-      <img src="${this.url_for(photo)}" itemprop="contentUrl">
+    <div class="post-gallery-image ${attrClass === undefined ? "" : attrClass}">
+      ${link === undefined ? "" : `<a href="${link}">`}
+        <img src="${this.url_for(photo)}" itemprop="contentUrl">
+      ${link === undefined ? "" : '</a>'}
     </div>`).join('');
   return `<div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
     ${content}
